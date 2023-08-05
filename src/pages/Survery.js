@@ -17,7 +17,7 @@ const Survery = () => {
     }
     const data = JSON.stringify({ word, feeling, personality })
     try {
-        const res = await axios.post('/api/generate-response', data, config)
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/generate-response`, data, config)
         setVideos(res.data.youtube.items)
     } catch (error) {
         console.log(error)
